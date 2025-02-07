@@ -1,111 +1,110 @@
 /* General Body Styling */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1d3557, #457b9d);
-    color: #ffffff;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* Container for the whole page */
-  .container {
-    max-width: 900px;
-    margin: 50px auto;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Header Styling */
-  h1 {
-    font-size: 2.5rem;
-    color: #f1faee;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Form Styling */
-  form {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  input[type="text"] {
-    width: 70%;
-    padding: 12px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    outline: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-  }
-  
-  input[type="text"]:focus {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-  
-  button {
-    padding: 12px 25px;
-    font-size: 1rem;
-    background-color: #e63946;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #f3722c;
-  }
-  
-  /* Movie Recommendations List */
-  .recommendation-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
-  }
-  
-  .recommendation-list li {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .recommendation-list li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Footer Styling */
-  footer {
-    margin-top: 40px;
-    font-size: 0.9rem;
-    color: #f1faee;
-    text-align: center;
-  }
-  
-  footer a {
-    color: #f3722c;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1d3557, #457b9d);
+  color: #ffffff;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Container for the whole page */
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Styling */
+h1 {
+  font-size: 2.5rem;
+  color: #f1faee;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Styling */
+form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+input[type="text"]:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f3722c;
+}
+
+/* Movie Recommendations List */
+.recommendation-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.recommendation-list li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recommendation-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styling */
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #f1faee;
+  text-align: center;
+}
+
+footer a {
+  color: #f3722c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

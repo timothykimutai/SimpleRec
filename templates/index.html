@@ -3,38 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie Recommendation System</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Movie Recommender System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+    }
+    .poster-card {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 8px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    height: 100%;
+  }
+
+    .poster-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* Equal and consistent card height */
+    .row.row-cols-md-5 .col {
+      display: flex;
+    }
+
+    .poster-card {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #f1faee;
+      text-align: center;
+    }
+
+    footer a {
+      color: #f3722c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navbar Centering */
+    .navbar {
+      padding: 0.75rem 1.5rem;
+    }
+
+    .navbar-center {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
 </head>
 <body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <h1>Welcome to the Movie Recommendation System 🎬</h1>
+    <a class="navbar-brand" href="#" style="display: inline; white-space: nowrap;">
+      <span style="color: white; font-weight: 300;">🎥Simple</span><span style="color: #28a745; font-weight: 700;">Rec</span>
+    </a>
 
-    <!-- Search Form -->
-    <form action="/" method="POST">
-      <input type="text" name="movie_title" placeholder="Enter a movie title..." required>
-      <button type="submit">Get Recommendations</button>
-    </form>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!-- Movie Recommendations -->
-    {% if recommendations %}
-    <h2>Recommended Movies:</h2>
-    <ul class="recommendation-list">
-      {% for movie in recommendations %}
-      <li>
-        <span>{{ movie }}</span>
-      </li>
-      {% endfor %}
-    </ul>
-    {% else %}
-    <h2>Search for a movie to see recommendations!</h2>
-    {% endif %}
+    <div class="collapse navbar-collapse justify-content-between">
+      <form class="d-flex navbar-center" method="POST" action="/">
+        <input class="form-control me-2" type="text" placeholder="Search for a movie" name="movie_title">
+        <button class="btn btn-outline-success" type="submit" style= "border-radius: 12px;">Search</button>
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="btn btn-outline-light ms-3" href="/signin" style="border-radius: 12px;">Sign In</a>
+        </li>
+      </ul>
+    </div>
   </div>
+</nav>
 
-  <!-- Footer Section -->
-  <footer>
-    <p>Powered by <a href="https://www.themoviedb.org/" target="_blank">TMDB API</a></p>
-  </footer>
+<!-- Recommendations Grid -->
+<div class="container mt-4">
+  <div class="row row-cols-1 row-cols-md-5 g-2">
+    {% for recommendation in recommendations %}
+      <div class="col">
+        <div class="poster-card">
+          <img src="https://image.tmdb.org/t/p/w500{{ recommendation.poster_path }}" alt="{{ recommendation.title }} poster">
+          <h5 class="mt-2">{{ recommendation.title }}</h5>
+          <p>Rating: {{ recommendation.rating }}</p>
+          <p>Release: {{ recommendation.release_date }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Powered by <a href="https://www.themoviedb.org/" target="_blank">TMDB API</a></p>
+</footer>
+
+<script>
+  document.querySelector("form").addEventListener("submit", function (event) {
+    const searchInput = document.querySelector("input[name='movie_title']").value.trim();
+    if (!searchInput) {
+      event.preventDefault();
+      alert("Please enter a movie title before searching!");
+    }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
