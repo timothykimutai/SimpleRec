@@ -29,12 +29,12 @@ SimpleRec is a Flask-based movie recommendation system that provides users with 
 ## 🧩 Project Structure
 
 ```
-├── app.py                  # Flask Application
+├── app.py                  
 ├── templates
-│   └── index.html           # Main Template for UI
-├── static                   # CSS and JS Files
-├── movies_data_optimized.csv # Optimized Movie Dataset
-└── README.md                # Project Documentation
+│   └── index.html          
+├── static                  
+├── movies_data_optimized.csv 
+└── README.md               
 ```
 
 ---
